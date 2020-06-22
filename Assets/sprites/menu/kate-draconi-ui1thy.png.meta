@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: 77fa99628ffd5bf48bd8cf2eb7c22e25
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4380392831387280161
+    second: kate-draconi-ui1thy_0
+  - first:
+      213: 2591188296897541281
+    second: kate-draconi-ui1thy_1
+  - first:
+      213: 4477551094639192036
+    second: kate-draconi-ui1thy_2
+  - first:
+      213: -4908301992431716644
+    second: kate-draconi-ui1thy_3
+  - first:
+      213: -2425201658189127946
+    second: kate-draconi-ui1thy_4
+  - first:
+      213: -4872254808738144895
+    second: kate-draconi-ui1thy_5
+  - first:
+      213: 4999419168706682157
+    second: kate-draconi-ui1thy_6
+  - first:
+      213: 4917095518163276416
+    second: kate-draconi-ui1thy_7
+  - first:
+      213: 509497206172078628
+    second: kate-draconi-ui1thy_8
+  - first:
+      213: -1314591796061996520
+    second: kate-draconi-ui1thy_9
+  - first:
+      213: -7751877440325632465
+    second: kate-draconi-ui1thy_10
+  - first:
+      213: 3559014556389574916
+    second: kate-draconi-ui1thy_11
+  - first:
+      213: 1869076293035710027
+    second: kate-draconi-ui1thy_12
+  - first:
+      213: -5658360628009406924
+    second: kate-draconi-ui1thy_13
+  - first:
+      213: 3266566735010728185
+    second: kate-draconi-ui1thy_14
+  - first:
+      213: 1351544863548157562
+    second: kate-draconi-ui1thy_15
+  - first:
+      213: 4638918074317785905
+    second: kate-draconi-ui1thy_16
+  - first:
+      213: -4501072808597966282
+    second: kate-draconi-ui1thy_17
+  - first:
+      213: -7532306648355921120
+    second: kate-draconi-ui1thy_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_0
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 798
+        width: 210
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123a18362184acc30800000000000000
+      internalID: 4380392831387280161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_1
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 816
+        width: 328
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a43abef600c5f320800000000000000
+      internalID: 2591188296897541281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 574
+        width: 112
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e761ab5ff4732e30800000000000000
+      internalID: 4477551094639192036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 586
+        width: 114
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6f3cad75532ebb0800000000000000
+      internalID: -4908301992431716644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_4
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 586
+        width: 114
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fed2fee0f3f75ed0800000000000000
+      internalID: -2425201658189127946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_5
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 691
+        width: 89
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d59f5d016426cb0800000000000000
+      internalID: -4872254808738144895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_6
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 480
+        width: 80
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d5a02fe31816540800000000000000
+      internalID: 4999419168706682157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_7
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 416
+        width: 185
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08299c662580d3440800000000000000
+      internalID: 4917095518163276416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_8
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 244
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422d0f37209121700800000000000000
+      internalID: 509497206172078628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_9
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 179
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81af41bf9b1a1cde0800000000000000
+      internalID: -1314591796061996520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_10
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 173
+        width: 17
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2eb60b0a8ccb6490800000000000000
+      internalID: -7751877440325632465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_11
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 140
+        width: 86
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4098b00f1e8246130800000000000000
+      internalID: 3559014556389574916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_12
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 192
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b465f785cfa40f910800000000000000
+      internalID: 1869076293035710027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 71
+        width: 87
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e6174fcf67971b0800000000000000
+      internalID: -5658360628009406924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_14
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 61
+        width: 268
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f80c63732d255d20800000000000000
+      internalID: 3266566735010728185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_15
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 165
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7eaac184e6a1c210800000000000000
+      internalID: 1351544863548157562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_16
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 151
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bc9d9196fb06040800000000000000
+      internalID: 4638918074317785905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 102
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6323957d02af881c0800000000000000
+      internalID: -4501072808597966282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kate-draconi-ui1thy_18
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 80
+        width: 84
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023ae6dd20fd77790800000000000000
+      internalID: -7532306648355921120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

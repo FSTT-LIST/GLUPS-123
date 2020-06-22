@@ -1,0 +1,506 @@
+fileFormatVersion: 2
+guid: 025ddd3d150a16247adf50e28e6069ce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5214466080617529547
+    second: dde_0
+  - first:
+      213: -1536418568529503690
+    second: dde_1
+  - first:
+      213: 5634382532028617422
+    second: dde_2
+  - first:
+      213: 7507379344387965761
+    second: dde_3
+  - first:
+      213: -4734079361627807847
+    second: dde_4
+  - first:
+      213: -8307170594429258517
+    second: dde_5
+  - first:
+      213: 3590729522844789331
+    second: dde_6
+  - first:
+      213: -3381794403875556509
+    second: dde_7
+  - first:
+      213: 7198732318568656798
+    second: dde_8
+  - first:
+      213: 5732573442222145404
+    second: dde_9
+  - first:
+      213: 26504911369522110
+    second: dde_10
+  - first:
+      213: -8447057181371089234
+    second: dde_11
+  - first:
+      213: -5312358761389420386
+    second: dde_0
+  - first:
+      213: -1635604134300936481
+    second: dde_1
+  - first:
+      213: -649359281408580371
+    second: dde_2
+  - first:
+      213: 1916300602649300314
+    second: dde_3
+  - first:
+      213: 7959610332035237241
+    second: dde_4
+  - first:
+      213: -7555284357924714500
+    second: dde_5
+  - first:
+      213: 2882948878109282982
+    second: dde_6
+  - first:
+      213: -3512436053872521549
+    second: dde_7
+  - first:
+      213: 2625231213759988261
+    second: dde_8
+  - first:
+      213: -1634846253146980530
+    second: dde_9
+  - first:
+      213: 6246551333712890170
+    second: dde_10
+  - first:
+      213: -7005101248702114678
+    second: dde_11
+  - first:
+      213: 651620621805310784
+    second: dde_12
+  - first:
+      213: 1070795682381740085
+    second: dde_13
+  - first:
+      213: 1256487046610927279
+    second: dde_12
+  - first:
+      213: 8716785680825999578
+    second: dde_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dde_0
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 971
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9013f34ad5b646b0800000000000000
+      internalID: -5312358761389420386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_1
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 589
+        width: 183
+        height: 389
+      alignment: 9
+      pivot: {x: 0.4709336, y: 0.5911595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd615d5a4ba2d49e0800000000000000
+      internalID: -1635604134300936481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 592
+        width: 218
+        height: 369
+      alignment: 9
+      pivot: {x: 0.51626664, y: 0.60571074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4e90c8c230df6f0800000000000000
+      internalID: -649359281408580371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_3
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 923
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d47cfbe31189a10800000000000000
+      internalID: 1916300602649300314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_4
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 595
+        width: 215
+        height: 412
+      alignment: 9
+      pivot: {x: 0.51158845, y: 0.53216213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9754d77dc67367e60800000000000000
+      internalID: 7959610332035237241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_5
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 932
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf705d4f7ec362790800000000000000
+      internalID: -7555284357924714500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_6
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 591
+        width: 131
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a29059eaba420820800000000000000
+      internalID: 2882948878109282982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_7
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 930
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be47a8c402514fc0800000000000000
+      internalID: -3512436053872521549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_8
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 87
+        width: 136
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5228e6d31e1be6420800000000000000
+      internalID: 2625231213759988261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_9
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 84
+        width: 173
+        height: 388
+      alignment: 9
+      pivot: {x: 0.51024914, y: 0.5913944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fbbca9efbdf49e0800000000000000
+      internalID: -1634846253146980530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_10
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 423
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a390335a75530b650800000000000000
+      internalID: 6246551333712890170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_11
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 417
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8417776781e8ce90800000000000000
+      internalID: -7005101248702114678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_12
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 84
+        width: 145
+        height: 388
+      alignment: 9
+      pivot: {x: 0.5611391, y: 0.58682495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faebf1ecf40ff6110800000000000000
+      internalID: 1256487046610927279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dde_13
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 87
+        width: 152
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad068d8a46e38f870800000000000000
+      internalID: 8716785680825999578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
