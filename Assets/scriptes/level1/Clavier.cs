@@ -124,7 +124,7 @@ public class Clavier : MonoBehaviour
         if(PlayerPrefs.GetString("sex"+Player)=="femme")
         img.gameObject.GetComponent<Image>().sprite=girlIcon;
 
-        if(PlayerPrefs.GetInt("Player"+Player+"scoreToatal")==0){
+        if(PlayerPrefs.GetInt("Player"+Player+"scoreToatal")==0 & PlayerPrefs.GetInt("Player"+Player+"lev"+levelIndex+"x"+x+"score")==0){
             instructionsImg.gameObject.SetActive(true);
             instructionsCanvas.gameObject.SetActive(true);
               result.text="0";
