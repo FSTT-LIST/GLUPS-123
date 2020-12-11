@@ -18,13 +18,15 @@ public class crud : MonoBehaviour
 	 List<string> names = new List<string>();
      // to calcul the number of players
 	   public int calcul;
-       public Sprite girlIcon; 
+       public Sprite girlIcon;
+    public Image homme;
+    public Image femme;
+    public Sprite check;
+    public Sprite empty;
     // Start is called before the first frame update
     void Start()
     {
-    	read();
-
-        
+        read();
     }
 
     // Update is called once per frame
@@ -112,15 +114,10 @@ public class crud : MonoBehaviour
              PlayerPrefs.SetInt("count",count);
              PlayerPrefs.SetString("Player",count.ToString());
              read();
-     
-
- 
-       namePlace.SetActive(false);
-       namePlace.transform.GetChild(1).GetChild(0).GetComponent<Text>().text="";
-       PlayerPrefs.DeleteKey("sex");
-       msg2.GetComponent<ArabicText>().Text="";
-         msg.GetComponent<ArabicText>().Text="";
-}
+    
+            namePlace.SetActive(false);
+            cancel();
+        }
 }
 
 //this function will call when we select a player 
@@ -161,8 +158,28 @@ public void delete( GameObject Item){
 public void getGender(string gender){
 
     PlayerPrefs.SetString("sex",gender);
-    Debug.Log(PlayerPrefs.GetString("sex"));
+    if(PlayerPrefs.GetString("sex")=="homme")
+        {
+            homme.sprite = check;
+            femme.sprite = empty;
+        }
+    else
+        {
+            homme.sprite = empty;
+            femme.sprite = check;
+        }
 }
+
+    public void cancel()
+    {
+        namePlace.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "";
+        PlayerPrefs.DeleteKey("sex");
+        homme.sprite = empty;
+        femme.sprite = empty;
+        msg2.GetComponent<ArabicText>().Text = "";
+        msg.GetComponent<ArabicText>().Text = "";
+
+    }
 
 
 }
