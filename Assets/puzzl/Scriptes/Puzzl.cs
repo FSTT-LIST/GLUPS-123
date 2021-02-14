@@ -20,6 +20,7 @@ public class Puzzl : MonoBehaviour
     private void Start()
     {
         player = PlayerPrefs.GetString("Player");
+        if(PlayerPrefs.GetString("level").Length!=0)
         lev = int.Parse(PlayerPrefs.GetString("level")[5].ToString());
 
         ordre[0] = ordre1;

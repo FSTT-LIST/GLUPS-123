@@ -269,7 +269,7 @@ public void saisir(string number)
         if ((result.text == z.ToString() | result.text == "0" + z.ToString()) & is_true == false)
         {
 
-            if (essaieNumber < 3 & y != 0)
+            if (essaieNumber < 2 & y != 0)
             {
                 score++;
             }
@@ -335,7 +335,7 @@ public void saisir(string number)
 
 public void checkEssaieNumber()
     {
-        if (essaieNumber < 2)
+        if (essaieNumber < 1)
         {
             
             Debug.Log("ressayer");
@@ -343,7 +343,7 @@ public void checkEssaieNumber()
       
     }
 
-        if (essaieNumber == 2)
+        if (essaieNumber == 1)
         {
 
            //in this case we will show the help text

@@ -171,7 +171,7 @@ if(PlayerPrefs.GetString("sex"+Player)=="femme"){
         
         {
 
-             if(essaieNumber<3 & y != 0){
+             if(essaieNumber<2 & y != 0){
                 score++;
              }
 
@@ -266,13 +266,13 @@ public void storing(){
 
     public void checkEssaieNumber(){
 
-        if(essaieNumber<2){
+        if(essaieNumber<1){
         
          Debug.Log("ressayer");
          eraser.Play();
         }
 
-        if(essaieNumber==2){
+        if(essaieNumber==1){
 
             result.text="";
             is_blocked=true;

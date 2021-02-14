@@ -9,8 +9,9 @@ public class tablesController : MonoBehaviour
 	public Text[] score;
 	public Sprite checkMark;
 	public Sprite acrossMark;
+    public Text scoreText;
 
-	  string Player;
+    string Player;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,8 @@ public class tablesController : MonoBehaviour
     {
         Player = PlayerPrefs.GetString("Player");
         showMarks();
-        
+        ShowLevelInfo();
+
     }
 /*in this function we will use the checkmark sprite in the tables that passed correctly and acrossmark in the tables 
     where the player failed also we will show the score for each table*/
@@ -57,5 +59,22 @@ public class tablesController : MonoBehaviour
 
 
          }
+    }
+
+    public void ShowLevelInfo()
+    {
+
+        int lev = int.Parse(PlayerPrefs.GetString("level")[5].ToString());
+        int score = 0;
+
+        for (int i = 0; i < 9; i++)
+        {
+            int j = i + 1;
+            score += PlayerPrefs.GetInt("Player" + Player + "lev" + lev + "x" + j + "score");
+        }
+
+        scoreText.text = score.ToString();
+
+
     }
 }

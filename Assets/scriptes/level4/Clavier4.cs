@@ -178,7 +178,7 @@ public void saisir(string number)
        
         if ((result.text == z.ToString() | result.text == "0" + z.ToString()) & is_true == false)
         {
-           if (essaieNumber < 3 & y != 0)
+           if (essaieNumber < 2 & y != 0)
             {
                 score++;
 
@@ -240,7 +240,7 @@ public void saisir(string number)
 
     IEnumerator wait1sec()
 {
-    if (essaieNumber < 3)
+    if (essaieNumber < 2)
     yield return new WaitForSeconds(1);
      result.text="?";
      essaieNumber = 0;
@@ -293,7 +293,7 @@ public void storing(){
 
 public void checkEssaieNumber()
     {
-        if (essaieNumber < 2)
+        if (essaieNumber < 1)
         {
             
             Debug.Log("ressayer");
@@ -301,7 +301,7 @@ public void checkEssaieNumber()
       
     }
 
-        if (essaieNumber == 2)
+        if (essaieNumber == 1)
         {
 
             result.text = "?";
