@@ -11,14 +11,13 @@ public class levelSelection : MonoBehaviour
 
 
 
-    public GameObject[] stars;
+    public GameObject[] BarFill1;
+    public GameObject[] BarFill2;
+    public GameObject[] BarFill3;
+    public GameObject[] BarFill4;
 
-   
     public Text levelText;
 
-    public Sprite starSprite;
-    public Sprite videstarSprite;
-    public Sprite whitestarSprite;
     public string level;
     string Player;
 
@@ -35,7 +34,6 @@ public class levelSelection : MonoBehaviour
 
         }
         levelText.text = level;
-
     }
 
     // Update is called once per frame
@@ -49,61 +47,90 @@ public class levelSelection : MonoBehaviour
     }
 
 
-    // we call this function to show the stars that the actual player has
+    // we call this function to show the BarFill that the actual player has
     private void storing()
     {
-        int lev = int.Parse(gameObject.name);
-        int count = 0;
+        int[,] levelTableScores = new int[4, 9]; // 4 levels, 9 scores per level
+        int[] levelScores = new int[4];
+        int[] levelCounts = new int[4]; // 4 levels
 
-        for (int i = 0; i < 9; i++)
+        // Retrieve level scores
+        for (int i = 0; i < 4; i++)
         {
-            int j = i + 1;
-            if (PlayerPrefs.GetString("Player" + Player + "lev" + lev + "x" + j) == "1")
+            for (int j = 0; j < 9; j++)
             {
-                count++;
+                levelTableScores[i, j] = PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "lev" + (i + 1) + "x" + (j + 1) + "score");
+            }
+        }
 
+        // Calculate level counts
+        for (int i = 0; i < 4; i++)
+        {
+            int levelScore = 0;
+            for (int j = 0; j < 9; j++)
+            {
+                levelScore += levelTableScores[i, j];
+            }
+            levelScores[i] = levelScore;
+            levelCounts[i] = (levelScore / 30) + 1;
+        }
+
+        // Update score bars
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                int count = levelCounts[i];
+                if (j < count)
+                {
+                    if (i == 0)
+                    {
+                        BarFill1[j].SetActive(true);
+                    }
+                    else if (i == 1)
+                    {
+                        BarFill2[j].SetActive(true);
+                    }
+                    else if (i == 2)
+                    {
+                        BarFill3[j].SetActive(true);
+                    }
+                    else if (i == 3)
+                    {
+                        BarFill4[j].SetActive(true);
+                    }
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        BarFill1[j].SetActive(false);
+                    }
+                    else if (i == 1)
+                    {
+                        BarFill2[j].SetActive(false);
+                    }
+                    else if (i == 2)
+                    {
+                        BarFill3[j].SetActive(false);
+                    }
+                    else if (i == 3)
+                    {
+                        BarFill4[j].SetActive(false);
+                    }
+                }
             }
 
+            // Special case for the first score bar, which should always be visible if there is a non-zero score
+            if (levelScores[0] == 0)
+                BarFill1[0].SetActive(false);
+            if (levelScores[1] == 0)
+                BarFill2[0].SetActive(false);
+            if (levelScores[2] == 0)
+                BarFill3[0].SetActive(false);
+            if (levelScores[3] == 0)
+                BarFill4[0].SetActive(false);
         }
-        // if the player pass 3 tables correctly he will win one star, the first star gameObject will be active 
-        if (count > 2)
-        { stars[0].gameObject.GetComponent<Image>().sprite = starSprite; }
-        else
-            stars[0].gameObject.GetComponent<Image>().sprite = videstarSprite;
-
-        // if the player pass 6 tables correctly he will win two stars, the second star gameObject will be active 
-        if (count > 5)
-        { stars[1].gameObject.GetComponent<Image>().sprite = starSprite; }
-        else
-            stars[1].gameObject.GetComponent<Image>().sprite = videstarSprite;
-
-        // if the player pass 9 tables correctly he will win three stars, the third star gameObject will be active 
-        if (count > 8)
-        { stars[2].gameObject.GetComponent<Image>().sprite = starSprite; }
-        else
-            stars[2].gameObject.GetComponent<Image>().sprite = videstarSprite;
-
-
-
-
-
-        if (count == 1 | count == 2)
-        { stars[0].gameObject.GetComponent<Image>().sprite = whitestarSprite; }
-
-
-
-
-        if (count == 4 | count == 5)
-        { stars[1].gameObject.GetComponent<Image>().sprite = whitestarSprite; }
-
-
-
-
-        if (count == 7 | count == 8)
-        { stars[2].gameObject.GetComponent<Image>().sprite = whitestarSprite; }
-
-
-
 
     }
 
@@ -122,9 +149,13 @@ public class levelSelection : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("mainMenu");
 
+    }    
+
+    public void PrizeSceneButton()
+    {
+        SceneManager.LoadSceneAsync("Prizes");
+
     }
-
-
 
     public void choisirX(int x)
     {

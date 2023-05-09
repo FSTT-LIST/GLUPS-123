@@ -73,7 +73,7 @@ public class tablesController : MonoBehaviour
             score += PlayerPrefs.GetInt("Player" + Player + "lev" + lev + "x" + j + "score");
         }
 
-        scoreText.text = score.ToString();
+        scoreText.text = PlayerPrefs.GetInt("Player" + Player + "scoreToatal").ToString() + " : عﻮﻤﺠﻤﻟﺍ";
 
 
     }
