@@ -77,9 +77,9 @@ public class OptionsController : MonoBehaviour
 
         }
         else { number --;}
-        
 
-    }
+            ScoreCounter();
+        }
 
 
 

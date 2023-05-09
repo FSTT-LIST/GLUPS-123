@@ -47,8 +47,8 @@ public class Clavier3 : MonoBehaviour
     public GameObject instructionsImg;
     public GameObject instructionsCanvas;
     public GameObject card;
-       public GameObject bigStar;
-     public GameObject bigStarWhite;
+/*       public GameObject bigStar;
+     public GameObject bigStarWhite;*/
 
 
 
@@ -363,11 +363,11 @@ public void levelUp(){
 
 
    finalScore.text=score.ToString() +"  : ﺔﺠﻴﺘﻨﻟا";
-     ShowStar();
+     //ShowStar();
 }
 
 
-    public void ShowStar(){
+/*    public void ShowStar(){
         int count=0;
 
         for(int i=0 ; i<9 ; i++)
@@ -393,7 +393,7 @@ public void levelUp(){
 
         }
 
-    }
+    }*/
 
 public void BackButton()
 {
