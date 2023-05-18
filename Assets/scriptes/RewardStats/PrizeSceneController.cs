@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
-using System;
+
 public class PrizeSceneController : MonoBehaviour
 {
     private string Player;
@@ -18,20 +18,53 @@ public class PrizeSceneController : MonoBehaviour
     public int[] ordre2;
     public int[] ordre3;
     public int[] ordre4;
+    private Vector3[][] originalPositions;
+    private int lastShuffleScore;
+    private int previousScore;
+    private bool isFirstTime = true;
 
-    // Start is called before the first frame update
+    private string previousScoreKey;
+
     void Start()
     {
-
+        InitializePlayerData();
+        previousScoreKey = "PreviousScore_" + Player;
+        ApplyShuffle();
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        UpdatePlayerData();
+        ApplyShuffle();
+        RankProgressBar();
+        ShowPuzzle();
+        UpdatePuzzleNumber();
+    }
+
+    private void InitializePlayerData()
+    {
+        Player = PlayerPrefs.GetString("Player");
+        lastShuffleScore = PlayerPrefs.GetInt("Player" + Player + "scoreToatal");
+        previousScore = PlayerPrefs.GetInt("PreviousScore", lastShuffleScore);
+
+        originalPositions = new Vector3[puzzles.Length][];
+
+        for (int i = 0; i < puzzles.Length; i++)
+        {
+            originalPositions[i] = new Vector3[9];
+
+            for (int j = 0; j < 9; j++)
+            {
+                originalPositions[i][j] = puzzles[i].transform.GetChild(j).position;
+            }
+        }
+    }
+
+    private void UpdatePlayerData()
     {
         Player = PlayerPrefs.GetString("Player");
         TotalScore = PlayerPrefs.GetInt("Player" + Player + "scoreToatal").ToString();
-
-        PlayerText.text = PlayerPrefs.GetString("name:" + Player).ToString();
+        PlayerText.text = PlayerPrefs.GetString("name:" + Player);
         ScoreText.text = TotalScore;
 
         if (PlayerPrefs.GetString("sex" + Player) == "femme")
@@ -41,10 +74,53 @@ public class PrizeSceneController : MonoBehaviour
         ordre[1] = ordre2;
         ordre[2] = ordre3;
         ordre[3] = ordre4;
+    }
 
-        RankProgressBar();
-        ShowPuzzle();
-        UpdatePuzzleNumber();
+    // Checks if the player's total score has changed since the last shuffle and applies the shuffle accordingly.
+    // This prevents continuous shuffling by avoiding calling the ShufflePuzzles() function every frame in Update().
+    private void ApplyShuffle()
+    {
+        int totalScore = PlayerPrefs.GetInt("Player" + Player + "scoreToatal");
+
+        if (isFirstTime || totalScore != PlayerPrefs.GetInt(previousScoreKey, totalScore))
+        {
+            ShufflePuzzles();
+            isFirstTime = false;
+            PlayerPrefs.SetInt(previousScoreKey, totalScore);
+            PlayerPrefs.Save();
+        }
+    }
+
+    // Shuffles the puzzle pieces based on the player's total score
+    private void ShufflePuzzles()
+    {
+        int totalScore = PlayerPrefs.GetInt("Player" + Player + "scoreToatal");
+        if (totalScore > 0)
+        {
+            for (int i = 0; i < puzzles.Length; i++)
+            {
+                if (totalScore < (i + 1) * 90)
+                {
+                    for (int j = 0; j < 9; j++)
+                    {
+                        int randomIndex = Random.Range(j, 9);
+                        Transform puzzlePiece = puzzles[i].transform.GetChild(j);
+                        Transform randomPiece = puzzles[i].transform.GetChild(randomIndex);
+                        Vector3 tempPosition = randomPiece.position;
+
+                        randomPiece.position = puzzlePiece.position;
+                        puzzlePiece.position = tempPosition;
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < 9; j++)
+                    {
+                        puzzles[i].transform.GetChild(j).position = originalPositions[i][j];
+                    }
+                }
+            }
+        }
     }
 
     private void RankProgressBar()
@@ -53,7 +129,7 @@ public class PrizeSceneController : MonoBehaviour
 
         for (int i = 0; i < RankProgressBarFill.Length; i += 2)
         {
-            if (totalScore >= GetRankScore(i))
+            if (totalScore > 0 && totalScore >= GetRankScore(i))
             {
                 RankProgressBarFill[i].SetActive(true);
                 RankProgressBarFill[i + 1].SetActive(true);
@@ -95,70 +171,81 @@ public class PrizeSceneController : MonoBehaviour
             {
                 puzzles[i].transform.GetChild(j).gameObject.SetActive(false);
             }
-
         }
-
         CheckPuzzle();
     }
 
+    //public void CheckPuzzle()
+    //{
+    //    int x = int.Parse(TotalScore) / 10;
+
+    //    if (int.Parse(TotalScore) >= 10 && int.Parse(TotalScore) < 91)
+    //    {
+    //        for (int i = 0; i < x; i++)
+    //        {
+    //            puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
+    //        }
+    //    }
+    //    else if (int.Parse(TotalScore) >= 100 && int.Parse(TotalScore) < 181)
+    //    {
+    //        x = x - 9;
+    //        for (int i = 0; i < 9; i++)
+    //        {
+    //            puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
+    //        }
+    //        for (int j = 0; j < x; j++)
+    //        {
+    //            puzzles[1].transform.GetChild(ordre[1][j]).gameObject.SetActive(true);
+    //        }
+    //    }
+    //    else if (int.Parse(TotalScore) >= 190 && int.Parse(TotalScore) < 271)
+    //    {
+    //        x = x - 18;
+    //        for (int i = 0; i < 9; i++)
+    //        {
+    //            puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
+    //        }
+    //        for (int j = 0; j < 9; j++)
+    //        {
+    //            puzzles[1].transform.GetChild(ordre[1][j]).gameObject.SetActive(true);
+    //        }
+    //        for (int j = 0; j < x; j++)
+    //        {
+    //            puzzles[2].transform.GetChild(ordre[2][j]).gameObject.SetActive(true);
+    //        }
+    //    }
+    //    else if (int.Parse(TotalScore) >= 280 && int.Parse(TotalScore) < 361)
+    //    {
+    //        x = x - 27;
+    //        for (int i = 0; i < 9; i++)
+    //        {
+    //            puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
+    //        }
+    //        for (int i = 0; i < 9; i++)
+    //        {
+    //            puzzles[1].transform.GetChild(ordre[1][i]).gameObject.SetActive(true);
+    //        }
+    //        for (int i = 0; i < 9; i++)
+    //        {
+    //            puzzles[2].transform.GetChild(ordre[2][i]).gameObject.SetActive(true);
+    //        }
+    //        for (int i = 0; i < x; i++)
+    //        {
+    //            puzzles[3].transform.GetChild(ordre[3][i]).gameObject.SetActive(true);
+    //        }
+    //    }
+    //}
+
     public void CheckPuzzle()
     {
-        int x = int.Parse(TotalScore) / 10;
+        int totalScore = int.Parse(TotalScore);
+        int x = totalScore / 10;
 
-        if (int.Parse(TotalScore) >= 10 && int.Parse(TotalScore) < 91)
+        for (int i = 0; i < Mathf.Min(x, 36); i++)
         {
-            for (int i = 0; i < x; i++)
-            {
-                puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
-            }
-        }
-        else if (int.Parse(TotalScore) >= 100 && int.Parse(TotalScore) < 181)
-        {
-            x = x - 9;
-            for (int i = 0; i < 9; i++)
-            {
-                puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
-            }
-            for (int j = 0; j < x; j++)
-            {
-                puzzles[1].transform.GetChild(ordre[1][j]).gameObject.SetActive(true);
-            }
-        }
-        else if (int.Parse(TotalScore) >= 190 && int.Parse(TotalScore) < 271)
-        {
-            x = x - 18;
-            for (int i = 0; i < 9; i++)
-            {
-                puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
-            }
-            for (int j = 0; j < 9; j++)
-            {
-                puzzles[1].transform.GetChild(ordre[1][j]).gameObject.SetActive(true);
-            }
-            for (int j = 0; j < x; j++)
-            {
-                puzzles[2].transform.GetChild(ordre[2][j]).gameObject.SetActive(true);
-            }
-        }
-        else if (int.Parse(TotalScore) >= 280 && int.Parse(TotalScore) < 361)
-        {
-            x = x - 27;
-            for (int i = 0; i < 9; i++)
-            {
-                puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
-            }
-            for (int i = 0; i < 9; i++)
-            {
-                puzzles[1].transform.GetChild(ordre[1][i]).gameObject.SetActive(true);
-            }
-            for (int i = 0; i < 9; i++)
-            {
-                puzzles[2].transform.GetChild(ordre[2][i]).gameObject.SetActive(true);
-            }
-            for (int i = 0; i < x; i++)
-            {
-                puzzles[3].transform.GetChild(ordre[3][i]).gameObject.SetActive(true);
-            }
+            int puzzleIndex = i / 9;
+            int childIndex = ordre[puzzleIndex][i % 9];
+            puzzles[puzzleIndex].transform.GetChild(childIndex).gameObject.SetActive(true);
         }
     }
 
@@ -210,7 +297,7 @@ public class PrizeSceneController : MonoBehaviour
         {
             if (puzzles[i].activeSelf)
             {
-                PuzzleNumber.text = (i+1).ToString(); 
+                PuzzleNumber.text = (i + 1).ToString();
             }
         }
     }

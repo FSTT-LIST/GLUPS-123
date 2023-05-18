@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9882353, g: 0.64705884, b: 0.07058824, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1306,7 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9882353, g: 0.64705884, b: 0.07058824, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2037,7 +2037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9882353, g: 0.64705884, b: 0.07058824, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3026,6 +3026,7 @@ MonoBehaviour:
   ordre2: 000000000800000003000000070000000100000005000000020000000400000006000000
   ordre3: 020000000400000007000000010000000000000006000000080000000300000005000000
   ordre4: 030000000400000002000000070000000100000008000000050000000600000000000000
+  imageMaterial: {fileID: 0}
 --- !u!1 &356153142
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,6 +5544,7 @@ MonoBehaviour:
   ordre2: 000000000800000003000000070000000100000005000000020000000400000006000000
   ordre3: 020000000400000007000000010000000000000006000000080000000300000005000000
   ordre4: 030000000400000002000000070000000100000008000000050000000600000000000000
+  imageMaterial: {fileID: 2100000, guid: 82bc7196bec784b48ba2a38d1ea447ff, type: 2}
 --- !u!1 &791180171
 GameObject:
   m_ObjectHideFlags: 0
@@ -10490,7 +10492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9882353, g: 0.64705884, b: 0.07058824, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
