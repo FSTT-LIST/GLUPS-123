@@ -5,16 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Clavier3 : MonoBehaviour
-
 {
-   
     public Text result;
     public Text help;
     public Text num;
     public Text scoreText;
-     public Text PlayeName;
-       public Text ShowMsgResult;
+    public Text PlayeName;
+    public Text ShowMsgResult;
     public Text finalScore;
+    public Text iScore;
+
     public int score;
     public int x;
     public int y;
@@ -26,76 +26,63 @@ public class Clavier3 : MonoBehaviour
     public bool has_help;
     public bool is_muted;
     public int levelIndex;
-     public string Player;
+    public string Player;
+    private int essaieNumber;
 
-
-   private int essaieNumber;
-  public Animator girl;
+    public Animator girl;
     public Animator boy;
     public GameObject Boy;
     public GameObject Girl;
     public AudioClip loseAudio;
     public AudioClip winAudio;
-     public AudioClip loser;
+    public AudioClip loser;
     public AudioClip winner;
     public Animation eraser;
-     public AudioSource song;
-
-      public GameObject img;
+    public AudioSource song;
+    public GameObject img;
     public Sprite girlIcon;
     public GameObject panel;
     public GameObject instructionsImg;
     public GameObject instructionsCanvas;
     public GameObject card;
-/*       public GameObject bigStar;
-     public GameObject bigStarWhite;*/
-
-
-
     AudioSource AudioAnswer;
 
-
     int Rand;
-    public int i =1;
+    public int i = 1;
     int Lenght = 12;
     List<int> list = new List<int>();
 
+    private float timer = 0f;
+    private float interval = 2.5f;
 
+    void randomList()
+    {
+        list = new List<int>(new int[Lenght]);
 
-
-    void randomList(){
-             list = new List<int>(new int[Lenght]);
- 
         for (int j = 1; j < Lenght; j++)
         {
-            Rand = Random.Range(1,12);
- 
+            Rand = Random.Range(1, 12);
+
             while (list.Contains(Rand))
             {
-                Rand = Random.Range(1,12);
+                Rand = Random.Range(1, 12);
             }
- 
             list[j] = Rand;
-
             print(list[j]);
         }
-
-        
-   
-    y = list[i] - 1 ;
+        y = list[i] - 1;
     }
-
 
     void Start()
     {
-         if(PlayerPrefs.GetInt("mute")==1)
-        song.Pause();
+        if (PlayerPrefs.GetInt("mute") == 1)
+            song.Pause();
 
-        Player= PlayerPrefs.GetString("Player");
-        PlayeName.text=PlayeName.text+PlayerPrefs.GetString("name:"+Player);
+        Player = PlayerPrefs.GetString("Player");
+        PlayeName.text = PlayeName.text + PlayerPrefs.GetString("name:" + Player);
 
-         x=PlayerPrefs.GetInt("x:");
-         num.text = x.ToString();
+        x = PlayerPrefs.GetInt("x:");
+        num.text = x.ToString();
 
         girl = girl.GetComponent<Animator>();
         boy = boy.GetComponent<Animator>();
@@ -104,18 +91,16 @@ public class Clavier3 : MonoBehaviour
         eraser = eraser.GetComponent<Animation>();
         randomList();
 
+        if (PlayerPrefs.GetString("sex" + Player) == "femme")
+            img.gameObject.GetComponent<Image>().sprite = girlIcon;
 
-         if(PlayerPrefs.GetString("sex"+Player)=="femme")
-         img.gameObject.GetComponent<Image>().sprite=girlIcon;
-
-         if(PlayerPrefs.GetInt("Player"+Player+"scoreToatal")==0 & PlayerPrefs.GetInt("Player"+Player+"lev"+levelIndex+"x"+x+"score")==0){
+        if (PlayerPrefs.GetInt("Player" + Player + "scoreToatal") == 0 & PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score") == 0)
+        {
             instructionsImg.gameObject.SetActive(true);
             instructionsCanvas.gameObject.SetActive(true);
-              card.gameObject.SetActive(true);
-             result.text="0";
-
+            card.gameObject.SetActive(true);
+            result.text = "0";
         }
-  
     }
 
     void Update()
@@ -126,96 +111,94 @@ public class Clavier3 : MonoBehaviour
             is_true = false;
             is_blocked = false;
             StopAllCoroutines();
-             eraser.Stop();
-            
+            eraser.Stop();
         }
 
+        if (PlayerPrefs.GetString("sex" + Player) == "femme")
+        {
+            Girl.SetActive(true);
+            girl.SetBool("isTrue", is_true);
+            girl.SetBool("isFalse", is_false);
+        }
 
-
-  
-if(PlayerPrefs.GetString("sex"+Player)=="femme"){
-      Girl.SetActive(true);
-      girl.SetBool("isTrue", is_true);
-      girl.SetBool("isFalse", is_false);
-
-  }
-
-  if(PlayerPrefs.GetString("sex"+Player)=="homme"){
-       Boy.SetActive(true);
-       boy.SetBool("isTrue", is_true);
-       boy.SetBool("isFalse", is_false);
-}
-
-
-
+        if (PlayerPrefs.GetString("sex" + Player) == "homme")
+        {
+            Boy.SetActive(true);
+            boy.SetBool("isTrue", is_true);
+            boy.SetBool("isFalse", is_false);
+        }
+        iScore.text = PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "RewardScore").ToString();
     }
 
+    private void Awake()
+    {
+        Main.controller.openLevel(3);
+    }
 
+    private void FixedUpdate()
+    {
+        timer += Time.fixedDeltaTime;
 
-public void saisir(string number)
+        // Check if the desired interval has elapsed
+        if (timer >= interval)
+        {
+            // Call your custom function here
+            Main.controller.traceModel(Main.days, Main.macAddress);
+
+            // Reset the timer
+            timer = 0f;
+        }
+    }
+
+    public void saisir(string number)
     {
         z = x * y;
-
 
         if (result.text == "?")
         {
             result.text = number;
             StartCoroutine(TestCoroutine());
         }
-
-
         else
         {
-
-
             if (is_blocked == false)
             {
                 result.text = result.text + number;
                 is_blocked = true;
                 StartCoroutine(TestCoroutine());
-
             }
 
         }
 
-       if (is_blocked & has_help)
-       {
+        if (is_blocked & has_help)
+        {
 
-       	helpme(number);
-      } 
-
-
+            helpme(number);
+        }
     }
-
-       
 
     public void delete()
     {
         if (is_true == false & has_help == false)
             result.text = "?";
-           
     }
-
 
     private void helpme(string number)
     {
-    	if(help.text[0]==number[0]){ result.text=number; }
-      	if(help.text.Length==2)
-      	{
-      	if(help.text[1]==number[0]){ result.text=result.text+number; }
+        if (help.text[0] == number[0]) { result.text = number; }
+        if (help.text.Length == 2)
+        {
+            if (help.text[1] == number[0]) { result.text = result.text + number; }
         }
-      	if(result.text == help.text)
-      	{StartCoroutine(TestCoroutine());
-      	 help.gameObject.SetActive(false);
-      	}
+        if (result.text == help.text)
+        {
+            StartCoroutine(TestCoroutine());
+            help.gameObject.SetActive(false);
+        }
     }
-
-
 
     void CheckAnswer()
     {
-
-       
         if ((result.text == z.ToString() | result.text == "0" + z.ToString()) & is_true == false)
         {
 
@@ -226,13 +209,10 @@ public void saisir(string number)
 
             i++;
 
-            if(i<12)
-            y = list[i] - 1;
-
+            if (i < 12)
+                y = list[i] - 1;
 
             essaieNumber = 0;
-
-
 
             if (i == 12)
             {
@@ -244,7 +224,6 @@ public void saisir(string number)
 
             scoreText.text = score.ToString();
 
-          
             Debug.Log("bravo");
             AudioAnswer.clip = winAudio;
             AudioAnswer.PlayOneShot(AudioAnswer.clip);
@@ -253,169 +232,119 @@ public void saisir(string number)
             is_blocked = true;
             has_help = false;
             StartCoroutine(wait1sec());
-
-        } 
-        
-
+        }
         else
         {
-            if (is_true == false & is_false == false & result.text != "?"){
+            if (is_true == false & is_false == false & result.text != "?")
+            {
                 is_false = true;
                 checkEssaieNumber();
             }
         }
     }
 
-
-  IEnumerator TestCoroutine()
-{
-
-    if (result.text == z.ToString() | result.text == "0" + z.ToString())
+    IEnumerator TestCoroutine()
     {
-        yield return new WaitForSeconds(0);
-        CheckAnswer();
+        if (result.text == z.ToString() | result.text == "0" + z.ToString())
+        {
+            yield return new WaitForSeconds(0);
+            CheckAnswer();
+        }
+        else
+        {
+            yield return new WaitForSeconds(2);
+            CheckAnswer();
+        }
     }
-
-    else
-    {
-        yield return new WaitForSeconds(2);
-        CheckAnswer();
-    }
-}
-
 
     IEnumerator wait1sec()
-{
-    yield return new WaitForSeconds(1);
-   
-    result.text = "?";
-    storing();
-   
-    if(is_finished)
     {
-    	levelUp();
+        yield return new WaitForSeconds(1);
+
+        result.text = "?";
+        storing();
+
+        if (is_finished)
+        {
+            levelUp();
+        }
     }
 
-}
+    public void storing()
+    {
+        if (score > PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score"))
+        {
 
+            if (score > 8)
+            {
+                PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "1");
+                PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
+            }
 
-public void storing(){
-     if(score >  PlayerPrefs.GetInt("Player"+Player+"lev"+levelIndex+"x"+x+"score"))
- { 
-      
-      if(score > 8){
-    
-    PlayerPrefs.SetString("Player"+Player+"lev"+levelIndex+"x"+x,"1");
-    PlayerPrefs.SetInt("Player"+Player+"lev"+levelIndex+"x"+x+"score",score);
+            else
+            {
+                PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "-1");
+                PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
+            }
+            Main.controller.addPositive(1);
+        }
     }
 
-      else{
-    PlayerPrefs.SetString("Player"+Player+"lev"+levelIndex+"x"+x,"-1");
-    PlayerPrefs.SetInt("Player"+Player+"lev"+levelIndex+"x"+x+"score",score);
-    }
-
- }
-}
-
-public void checkEssaieNumber()
+    public void checkEssaieNumber()
     {
         if (essaieNumber < 1)
         {
-            
+
             Debug.Log("ressayer");
             eraser.Play();
-      
-    }
+
+        }
 
         if (essaieNumber == 1)
         {
 
-        	result.text="";
-        	is_blocked=true;
-        	help.text=z.ToString();
-        	help.gameObject.SetActive(true);
-        	has_help = true;
+            result.text = "";
+            is_blocked = true;
+            help.text = z.ToString();
+            help.gameObject.SetActive(true);
+            has_help = true;
 
-
+            Main.controller.addNegative(1);
         }
-          AudioAnswer.clip = loseAudio;
+        AudioAnswer.clip = loseAudio;
         AudioAnswer.PlayOneShot(AudioAnswer.clip);
         essaieNumber++;
-
     }
 
-
-
-public void levelUp(){
- 
-
-   
-    
-     panel.gameObject.SetActive(true);
-     song.Pause();
-           if(score > 8){
-   ShowMsgResult.text="ﺖﻨﺴﺣأ";
-    AudioAnswer.PlayOneShot(winner);}
-   else
-   {
-    ShowMsgResult.text="ﺔﻴﻧﺎﺛ لوﺎﺣ";
-     AudioAnswer.PlayOneShot(loser);}
-
-
-   finalScore.text=score.ToString() +"  : ﺔﺠﻴﺘﻨﻟا";
-     //ShowStar();
-}
-
-
-/*    public void ShowStar(){
-        int count=0;
-
-        for(int i=0 ; i<9 ; i++)
-            {
-                int j = i+1;
-                if(PlayerPrefs.GetString("Player"+Player+"lev"+levelIndex+"x"+j)=="1"){
-
-                count++;
-            }
-         }
-
-           if ((count == 3 | count ==6 | count==9) & PlayerPrefs.GetInt("Player"+Player+"lev"+levelIndex+"star"+count)==0)
+    public void levelUp()
+    {
+        panel.gameObject.SetActive(true);
+        song.Pause();
+        if (score > 8)
         {
-            bigStar.gameObject.SetActive(true);
-            PlayerPrefs.SetInt("Player"+Player+"lev"+levelIndex+"star"+count,1);
-
+            ShowMsgResult.text = "ﺖﻨﺴﺣأ";
+            AudioAnswer.PlayOneShot(winner);
         }
-
-           if ((count == 1 | count ==4 | count==7) & PlayerPrefs.GetInt("Player"+Player+"lev"+levelIndex+"star"+count)==0)
+        else
         {
-            bigStarWhite.gameObject.SetActive(true);
-            PlayerPrefs.SetInt("Player"+Player+"lev"+levelIndex+"star"+count,1);
-
+            ShowMsgResult.text = "ﺔﻴﻧﺎﺛ لوﺎﺣ";
+            AudioAnswer.PlayOneShot(loser);
         }
+        finalScore.text = score.ToString() + "  : ﺔﺠﻴﺘﻨﻟا";
+    }
 
-    }*/
+    public void BackButton()
+    {
+        SceneManager.LoadScene("map");
+    }
 
-public void BackButton()
-{
-	SceneManager.LoadScene("map");
+    public void Homebutton()
+    {
+        SceneManager.LoadScene("mainMenu");
+    }
 
+    public void restartbutton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
-
-public void Homebutton()
-{
-	SceneManager.LoadScene("mainMenu");
-
-}
-
-
-public void restartbutton()
-{
-SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-}
-
-
-
-}
-
-
-

@@ -1,37 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
-
 public class levelSelection : MonoBehaviour
 {
-
-
-
     public GameObject[] BarFill1;
     public GameObject[] BarFill2;
     public GameObject[] BarFill3;
     public GameObject[] BarFill4;
 
     public Text levelText;
-
     public string level;
-    string Player;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-
-       
         if (PlayerPrefs.GetInt("x:") == 0)
         {
             PlayerPrefs.SetInt("x:", 1);
-
         }
         levelText.text = level;
     }
@@ -39,13 +25,9 @@ public class levelSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //PlayerPrefs used to Store and accesses player preferences between game sessions. 
-        Player = PlayerPrefs.GetString("Player");
+        //PlayerPrefs used to Store and accesses player preferences between game sessions.
         storing();
-
-
     }
-
 
     // we call this function to show the BarFill that the actual player has
     private void storing()
@@ -136,25 +118,18 @@ public class levelSelection : MonoBehaviour
 
     public void pressSelection(string levelName)
     {
-
         PlayerPrefs.SetString("level", levelName);
         levelText.text = level;
-        
-
     }
-
-
 
     public void BackButton()
     {
         SceneManager.LoadSceneAsync("mainMenu");
-
-    }    
+    }
 
     public void PrizeSceneButton()
     {
         SceneManager.LoadSceneAsync("Prizes");
-
     }
 
     public void choisirX(int x)
@@ -162,11 +137,5 @@ public class levelSelection : MonoBehaviour
         // x is the number of the table selected
         PlayerPrefs.SetInt("x:", x);
         SceneManager.LoadScene(PlayerPrefs.GetString("level"));
-
-
     }
-
-  
-
-
 }

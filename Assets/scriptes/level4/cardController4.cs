@@ -28,29 +28,31 @@ public class cardController4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	if(clav.is_true == false){
-        if (clav.y == 0)
-            cardRender.sprite = number0;
-        if (clav.y == 1)
-            cardRender.sprite = number1;
-        if (clav.y == 2)
-            cardRender.sprite = number2;
-        if (clav.y == 3)
-            cardRender.sprite = number3;
-        if (clav.y == 4)
-            cardRender.sprite = number4;
-        if (clav.y == 5)
-            cardRender.sprite = number5;
-        if (clav.y == 6)
-            cardRender.sprite = number6;
-        if (clav.y == 7)
-            cardRender.sprite = number7;
-        if (clav.y == 8)
-            cardRender.sprite = number8;
-        if (clav.y == 9)
-            cardRender.sprite = number9;
-        if (clav.y == 10)
-            cardRender.sprite = number10;}
+        if (clav.is_true == false)
+        {
+            if (clav.y == 0)
+                cardRender.sprite = number0;
+            if (clav.y == 1)
+                cardRender.sprite = number1;
+            if (clav.y == 2)
+                cardRender.sprite = number2;
+            if (clav.y == 3)
+                cardRender.sprite = number3;
+            if (clav.y == 4)
+                cardRender.sprite = number4;
+            if (clav.y == 5)
+                cardRender.sprite = number5;
+            if (clav.y == 6)
+                cardRender.sprite = number6;
+            if (clav.y == 7)
+                cardRender.sprite = number7;
+            if (clav.y == 8)
+                cardRender.sprite = number8;
+            if (clav.y == 9)
+                cardRender.sprite = number9;
+            if (clav.y == 10)
+                cardRender.sprite = number10;
+        }
 
     }
 }
