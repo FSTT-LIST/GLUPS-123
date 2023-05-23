@@ -5,7 +5,7 @@ using UnityEngine;
 public class cardBack : MonoBehaviour
 
 {
-   //all cards animations
+    //all cards animations
     public Animation Animation1;
     public Animation Animation2;
     public Animation Animation3;
@@ -20,14 +20,14 @@ public class cardBack : MonoBehaviour
 
     // Clavier script is the script controller
     public Clavier clav;
-   // this bool used for playing animation one time 
+    // this bool used for playing animation one time 
     private bool is_played;
 
 
     // Start is called before the first frame update
     void Start()
     {
-      
+
         Animation1 = Animation1.GetComponent<Animation>();
         Animation2 = Animation2.GetComponent<Animation>();
         Animation3 = Animation3.GetComponent<Animation>();
@@ -38,7 +38,7 @@ public class cardBack : MonoBehaviour
         Animation8 = Animation8.GetComponent<Animation>();
         Animation9 = Animation9.GetComponent<Animation>();
         Animation10 = Animation10.GetComponent<Animation>();
-        AnimationCard =GetComponent<Animation>();
+        AnimationCard = GetComponent<Animation>();
 
         clav = FindObjectOfType<Clavier>();
 
@@ -48,121 +48,122 @@ public class cardBack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	/*when the answer is true the variable is_true of clavier_script will be true in this moment tuteur animation played 
+        /*when the answer is true the variable is_true of clavier_script will be true in this moment tuteur animation played 
     	for (1sec) then the value of is_true become false and the card animation will played
     	and also we used the y variable to know which card will moved*/
 
-        if(clav.is_true == false){
-
-        if (clav.y == 1)
+        if (clav.is_true == false)
         {
-           
-            if (is_played == false)
+
+            if (clav.y == 1)
             {
-                Animation1.Play();
-               
-                is_played = true;
-            }
-        }
 
-        if (clav.y == 2)
-        {
-           
-            if (is_played == true)
+                if (is_played == false)
+                {
+                    Animation1.Play();
+
+                    is_played = true;
+                }
+            }
+
+            if (clav.y == 2)
             {
-                Animation2.Play();
-                is_played = false;
-            }
-        }
 
-        if (clav.y == 3)
-        {
-           
-            if (is_played == false)
+                if (is_played == true)
+                {
+                    Animation2.Play();
+                    is_played = false;
+                }
+            }
+
+            if (clav.y == 3)
             {
-                Animation3.Play();
-                is_played = true;
+
+                if (is_played == false)
+                {
+                    Animation3.Play();
+                    is_played = true;
+                }
             }
-        }
 
 
-        if (clav.y == 4)
-        {
-          
-            if (is_played == true)
+            if (clav.y == 4)
             {
-                Animation4.Play();
-                is_played = false;
-            }
-        }
 
-        if (clav.y == 5)
-        {
-           
-            if (is_played == false)
+                if (is_played == true)
+                {
+                    Animation4.Play();
+                    is_played = false;
+                }
+            }
+
+            if (clav.y == 5)
             {
-                Animation5.Play();
-                is_played = true;
-            }
-        }
 
-        if (clav.y == 6)
-        {
-           
-            if (is_played == true)
+                if (is_played == false)
+                {
+                    Animation5.Play();
+                    is_played = true;
+                }
+            }
+
+            if (clav.y == 6)
             {
-                Animation6.Play();
-                is_played = false;
-            }
-        }
 
-        if (clav.y == 7)
-        {
-           
-            if (is_played == false)
+                if (is_played == true)
+                {
+                    Animation6.Play();
+                    is_played = false;
+                }
+            }
+
+            if (clav.y == 7)
             {
-                Animation7.Play();
-                is_played = true;
-            }
-        }
 
-        if (clav.y == 8)
-        {
-            
-            if (is_played == true)
+                if (is_played == false)
+                {
+                    Animation7.Play();
+                    is_played = true;
+                }
+            }
+
+            if (clav.y == 8)
             {
-                Animation8.Play();
-                is_played = false;
-            }
-        }
 
-        if (clav.y == 9)
-        {
-           
-            if (is_played == false)
+                if (is_played == true)
+                {
+                    Animation8.Play();
+                    is_played = false;
+                }
+            }
+
+            if (clav.y == 9)
             {
-                Animation9.Play();
-                is_played = true;
-            }
-        }
 
-        if (clav.y == 10)
-        {
-           
-            if(is_played == true)
+                if (is_played == false)
+                {
+                    Animation9.Play();
+                    is_played = true;
+                }
+            }
+
+            if (clav.y == 10)
             {
-                Animation10.Play();
-                is_played = false;
-            }
-        }
 
-      
-       
-        
-        
-        
-       
-        
+                if (is_played == true)
+                {
+                    Animation10.Play();
+                    is_played = false;
+                }
+            }
+
+
+
+
+
+
+
+
         }
     }
 }

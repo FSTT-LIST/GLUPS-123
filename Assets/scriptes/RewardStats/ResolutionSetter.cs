@@ -8,10 +8,10 @@ public class ResolutionSetter : MonoBehaviour
         {
             Resolution currentResolution = Screen.currentResolution;
             // Set the desired width and height
-            int targetWidth = (int)(currentResolution.width / 3.42f);
+            int targetWidth = (int)(currentResolution.width / 3.42);
 
             // Retrieve the screen height in pixels
-            int screenHeight = (int) (currentResolution.height / 1.15f);
+            int screenHeight = (int)(currentResolution.height / 1.15);
             // Set the resolution in windowed mode
             Screen.SetResolution(targetWidth, screenHeight, FullScreenMode.Windowed);
         }
