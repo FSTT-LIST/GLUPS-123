@@ -41,7 +41,7 @@ public class levelSelection : MonoBehaviour
         {
             for (int j = 0; j < 9; j++)
             {
-                levelTableScores[i, j] = PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "lev" + (i + 1) + "x" + (j + 1) + "score");
+                levelTableScores[i, j] = PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "Level" + (i + 1) + "Table" + (j + 1) + "Score");
             }
         }
 

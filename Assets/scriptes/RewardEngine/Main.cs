@@ -14,7 +14,7 @@ public class Main : MonoBehaviour
     private static Main instance;
     public static RewardModel model = new RewardModel();
     public static View view = new View();
-    public static Controller controller = new Controller(model, view);
+    public static TableController controller = new TableController(model, view);
 
     //public int Level;
     void Start()
@@ -41,6 +41,7 @@ public class Main : MonoBehaviour
         GetMacAddress();
         //PlayerPrefs.SetInt("Player" + PlayerPrefs.GetString("Player") + "Rank", model._rank);
         controller.openLevel(0);
+        Debug.Log("sakor" + PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "Level" + 1 + "Table" + 0 + "Score"));
     }
     private void Update()
     {

@@ -111,14 +111,14 @@ public class PrizeSceneController : MonoBehaviour
 
         for (int i = 1; i <= 9; i++)
         {
-                LevelFourScore += PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "lev" + 4 + "x" + i + "score");
+            LevelFourScore += PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "Level" + 4 + "Table" + i + "Score");
         }
 
         if (LevelFourScore == 90)
         {
             for (int i = 1; i <= 9; i++)
             {
-                PlayerPrefs.SetInt("Player" + PlayerPrefs.GetString("Player") + "lev" + 4 + "x" + i + "score", 0);
+                PlayerPrefs.SetInt("Player" + PlayerPrefs.GetString("Player") + "Level" + 4 + "Table" + i + "Score", 0);
             }
         }
     }
@@ -185,25 +185,6 @@ public class PrizeSceneController : MonoBehaviour
         }
     }
 
-    //private void RankProgressBar()
-    //{
-    //    int totalScore = PlayerPrefs.GetInt("Player" + Player + "scoreTotal");
-
-    //    for (int i = 0; i < RankProgressBarFill.Length; i += 2)
-    //    {
-    //        if (totalScore > 0 && totalScore >= GetRankScore(i))
-    //        {
-    //            RankProgressBarFill[i].SetActive(true);
-    //            RankProgressBarFill[i + 1].SetActive(true);
-    //        }
-    //        else
-    //        {
-    //            RankProgressBarFill[i].SetActive(false);
-    //            RankProgressBarFill[i + 1].SetActive(false);
-    //        }
-    //    }
-    //}
-
     private void RankProgressBar()
     {
         for (int i = 0; i < RankProgressBarFill.Length; i++)
@@ -220,26 +201,6 @@ public class PrizeSceneController : MonoBehaviour
             }
         }
     }
-    //private int GetRankScore(int rankIndex)
-    //{
-    //    switch (rankIndex)
-    //    {
-    //        case 0:
-    //            return 0;
-    //        case 2:
-    //            return 50;
-    //        case 4:
-    //            return 120;
-    //        case 6:
-    //            return 200;
-    //        case 8:
-    //            return 320;
-    //        case 10:
-    //            return 360;
-    //        default:
-    //            return 0;
-    //    }
-    //}
 
     public void ShowPuzzle()
     {
@@ -252,67 +213,6 @@ public class PrizeSceneController : MonoBehaviour
         }
         CheckPuzzle();
     }
-
-    //public void CheckPuzzle()
-    //{
-    //    int x = int.Parse(TotalScore) / 10;
-
-    //    if (int.Parse(TotalScore) >= 10 && int.Parse(TotalScore) < 91)
-    //    {
-    //        for (int i = 0; i < x; i++)
-    //        {
-    //            puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
-    //        }
-    //    }
-    //    else if (int.Parse(TotalScore) >= 100 && int.Parse(TotalScore) < 181)
-    //    {
-    //        x = x - 9;
-    //        for (int i = 0; i < 9; i++)
-    //        {
-    //            puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
-    //        }
-    //        for (int j = 0; j < x; j++)
-    //        {
-    //            puzzles[1].transform.GetChild(ordre[1][j]).gameObject.SetActive(true);
-    //        }
-    //    }
-    //    else if (int.Parse(TotalScore) >= 190 && int.Parse(TotalScore) < 271)
-    //    {
-    //        x = x - 18;
-    //        for (int i = 0; i < 9; i++)
-    //        {
-    //            puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
-    //        }
-    //        for (int j = 0; j < 9; j++)
-    //        {
-    //            puzzles[1].transform.GetChild(ordre[1][j]).gameObject.SetActive(true);
-    //        }
-    //        for (int j = 0; j < x; j++)
-    //        {
-    //            puzzles[2].transform.GetChild(ordre[2][j]).gameObject.SetActive(true);
-    //        }
-    //    }
-    //    else if (int.Parse(TotalScore) >= 280 && int.Parse(TotalScore) < 361)
-    //    {
-    //        x = x - 27;
-    //        for (int i = 0; i < 9; i++)
-    //        {
-    //            puzzles[0].transform.GetChild(ordre[0][i]).gameObject.SetActive(true);
-    //        }
-    //        for (int i = 0; i < 9; i++)
-    //        {
-    //            puzzles[1].transform.GetChild(ordre[1][i]).gameObject.SetActive(true);
-    //        }
-    //        for (int i = 0; i < 9; i++)
-    //        {
-    //            puzzles[2].transform.GetChild(ordre[2][i]).gameObject.SetActive(true);
-    //        }
-    //        for (int i = 0; i < x; i++)
-    //        {
-    //            puzzles[3].transform.GetChild(ordre[3][i]).gameObject.SetActive(true);
-    //        }
-    //    }
-    //}
     
     public void CheckPuzzle()
     {

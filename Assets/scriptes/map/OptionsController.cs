@@ -120,7 +120,7 @@ public class OptionsController : MonoBehaviour
             for (int j = 1; j < 10; j++)
             {
 
-                total = total + PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "lev" + i + "x" + j + "score");
+                total = total + PlayerPrefs.GetInt("Player" + PlayerPrefs.GetString("Player") + "Level" + i + "Table" + j + "Score");
 
             }
         }

@@ -72,7 +72,7 @@ public class StatsController : MonoBehaviour
 
         StreamWriter fileWriter = new StreamWriter(new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite));
 
-        string csvData = string.Format("{0}; {1}; {2}; {3}.{4}.{5}; {6}; <level {7}>; <score {8}>; <rank {9}>; <iScore {10}> ; <nextThreshold {11}>; <reward {12}>; <positives {13}>; <negatives {14}>",
+        string csvData = string.Format("{0}; {1}; {2}; {3}.{4}.{5}; {6}; <level ;{7};>; <score ;{8};>; <rank ;{9};>; <iScore ;{10};> ; <nextThreshold ;{11};>; <reward ;{12};>; <positives ;{13};>; <negatives ;{14};>",
             days, inputOutput, Application.version, macAddress, id, reversedPlayerNom, Main.controller._currentStrategy.name(), LevelIndex,
              score, rank, iScore, nextThreshold, reward, Main.model.Positives, Main.model.Negatives);
         fileWriter.WriteLine(csvData);
