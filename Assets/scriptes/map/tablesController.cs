@@ -38,19 +38,19 @@ public class tablesController : MonoBehaviour
         for (int i = 0; i < 9; i++)
         {
             int j = i + 1;
-            if (PlayerPrefs.GetString("Player" + Player + "lev" + lev + "x" + j) == "1")
+            if (PlayerPrefs.GetString("Player" + Player + "Level" + lev + "Table" + j) == "1")
             {
                 marks[i].gameObject.SetActive(true);
                 marks[i].gameObject.GetComponent<Image>().sprite = checkMark;
-                score[i].text = PlayerPrefs.GetInt("Player" + Player + "lev" + lev + "x" + j + "score") + "/10";
+                score[i].text = PlayerPrefs.GetInt("Player" + Player + "Level" + lev + "Table" + j + "Score") + "/10";
                 score[i].color = new Color(66 / 255f, 140 / 255f, 1 / 255f);
             }
 
-            else if (PlayerPrefs.GetString("Player" + Player + "lev" + lev + "x" + j) == "-1")
+            else if (PlayerPrefs.GetString("Player" + Player + "Level" + lev + "Table" + j) == "-1")
             {
                 marks[i].gameObject.SetActive(true);
                 marks[i].gameObject.GetComponent<Image>().sprite = acrossMark;
-                score[i].text = PlayerPrefs.GetInt("Player" + Player + "lev" + lev + "x" + j + "score") + "/10";
+                score[i].text = PlayerPrefs.GetInt("Player" + Player + "Level" + lev + "Table" + j + "Score") + "/10";
                 score[i].color = new Color(239 / 255f, 34 / 255f, 34 / 255f);
             }
 
@@ -74,7 +74,7 @@ public class tablesController : MonoBehaviour
         for (int i = 0; i < 9; i++)
         {
             int j = i + 1;
-            score += PlayerPrefs.GetInt("Player" + Player + "lev" + lev + "x" + j + "score");
+            score += PlayerPrefs.GetInt("Player" + Player + "Level" + lev + "Table" + j + "Score");
         }
 
         scoreText.text = PlayerPrefs.GetInt("Player" + Player + "RewardScore").ToString() + " : عﻮﻤﺠﻤﻟﺍ";

@@ -113,7 +113,7 @@ public class Clavier : MonoBehaviour
         if (PlayerPrefs.GetString("sex" + Player) == "femme")
             img.gameObject.GetComponent<Image>().sprite = girlIcon;
 
-        if (PlayerPrefs.GetInt("Player" + Player + "scoreToatal") == 0 & PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score") == 0)
+        if (PlayerPrefs.GetInt("Player" + Player + "scoreTotal") == 0 & PlayerPrefs.GetInt("Player" + Player + "Level" + levelIndex + "Table" + x + "Score") == 0)
         {
             instructionsImg.gameObject.SetActive(true);
             instructionsCanvas.gameObject.SetActive(true);
@@ -124,6 +124,8 @@ public class Clavier : MonoBehaviour
     private void Awake()
     {
         Main.controller.openLevel(1);
+        x = PlayerPrefs.GetInt("x:");
+        Main.controller.openTable(10, 1, x);
     }
 
     void Update()
@@ -334,22 +336,18 @@ public class Clavier : MonoBehaviour
 
     public void storing()
     {
+        if(score > 0)
+            Main.controller.addPositive(1);
         //if there is an other score for this scene then we compare this score with the old one in order to stock the better score
-        if (score > PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score"))
-        {
             /* PlayerPrefs.SetInt("Player"+Player+"lev"+levelIndex+"x"+x, ? ) in the place of ? we put the value of the varible 
              we use "1" if the player wins, "-1" if he fails, "0" if he doesn't play the scene yet */
-            if (score > 8)
-            {
-                PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "1");
-                PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
-            }
-            else
-            {
-                PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "-1");
-                PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
-            }
-            Main.controller.addPositive(1);
+        if (PlayerPrefs.GetInt("Player" + Player + "Level" + levelIndex + "Table" + x + "Score") > 8)
+        {
+            PlayerPrefs.SetString("Player" + Player + "Level" + levelIndex + "Table" + x, "1");
+        }
+        else
+        {
+            PlayerPrefs.SetString("Player" + Player + "Level" + levelIndex + "Table" + x, "-1");
         }
     }
 

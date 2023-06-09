@@ -70,7 +70,7 @@ public class Clavier4 : MonoBehaviour
         if (PlayerPrefs.GetString("sex" + Player) == "femme")
             img.gameObject.GetComponent<Image>().sprite = girlIcon;
 
-        if (PlayerPrefs.GetInt("Player" + Player + "scoreToatal") == 0 & PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score") == 0)
+        if (PlayerPrefs.GetInt("Player" + Player + "scoreTotal") == 0 & PlayerPrefs.GetInt("Player" + Player + "Level" + levelIndex + "Table" + "x" + x + "Score") == 0)
         {
             is_counting = false;
             instructionsImg.gameObject.SetActive(true);
@@ -119,6 +119,8 @@ public class Clavier4 : MonoBehaviour
     private void Awake()
     {
         Main.controller.openLevel(4);
+        x = PlayerPrefs.GetInt("x:");
+        Main.controller.openTable(10, 4, x);
     }
 
     private void FixedUpdate()
@@ -230,39 +232,25 @@ public class Clavier4 : MonoBehaviour
 
     public void storing()
     {
-
-        if (PlayerPrefs.GetString("Player" + Player + "lev" + levelIndex + "x" + x) == "-1")
+        if (score > 0)
+            Main.controller.addPositive(1);
+        if (PlayerPrefs.GetString("Player" + Player + "Level" + levelIndex + "Table" + x) == "-1")
         {
-            if (score > 8 & min < 1)
+            if (PlayerPrefs.GetInt("Player" + Player + "Level" + levelIndex + "Table" + x + "Score") > 8 & min < 1)
             {
-                PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "1");
-                PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
-                Main.controller.addPositive(1);
-            }
-            else
-            {
-                if (score > PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score"))
-                {
-                    PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
-                    Main.controller.addPositive(1);
-                }
+                PlayerPrefs.SetString("Player" + Player + "Level" + levelIndex + "Table" + x, "1");
             }
         }
         else
         {
-            if (score > 8 & min < 1)
+            if (PlayerPrefs.GetInt("Player" + Player + "Level" + levelIndex + "Table" + x + "Score") > 8 & min < 1)
             {
-                PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "1");
+                PlayerPrefs.SetString("Player" + Player + "Level" + levelIndex + "Table" + x, "1");
             }
             else
             {
-                if (PlayerPrefs.GetString("Player" + Player + "lev" + levelIndex + "x" + x) != "1")
-                    PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "-1");
-            }
-            if (score > PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score"))
-            {
-                PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
-                Main.controller.addPositive(1);
+                if (PlayerPrefs.GetString("Player" + Player + "Level" + levelIndex + "Table" + x) != "1")
+                    PlayerPrefs.SetString("Player" + Player + "Level" + levelIndex + "Table" + x, "-1");
             }
         }
     }

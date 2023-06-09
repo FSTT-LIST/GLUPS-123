@@ -50,7 +50,7 @@ namespace com.glups.Reward
             if (asciiCode % 2 == 0)
             {
                 if (level == 1) { _currentStrategy = _FRS; }
-                else if(level == 2 ) { _currentStrategy = _FIS; }
+                else if(level == 2 ) { _currentStrategy = _FRS; }
                 else if (level == 3) { _currentStrategy = _VRS; }
                 else if (level == 4) { _currentStrategy = _VIS; }
                 else if (level == 0) { _currentStrategy = _FRS; }
@@ -58,7 +58,7 @@ namespace com.glups.Reward
             }
             else if(asciiCode % 2 == 1)
             {
-                if (level == 1) { _currentStrategy = _VRS; }
+                if (level == 1) { _currentStrategy = _VIS; }
                 else if (level == 2) { _currentStrategy = _VIS; }
                 else if (level == 3) { _currentStrategy = _FRS; }
                 else if (level == 4) { _currentStrategy = _FIS; }

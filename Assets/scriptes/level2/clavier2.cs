@@ -68,7 +68,7 @@ public class clavier2 : MonoBehaviour
         if (PlayerPrefs.GetString("sex" + Player) == "femme")
             img.gameObject.GetComponent<Image>().sprite = girlIcon;
 
-        if (PlayerPrefs.GetInt("Player" + Player + "scoreToatal") == 0 & PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score") == 0)
+        if (PlayerPrefs.GetInt("Player" + Player + "scoreTotal") == 0 & PlayerPrefs.GetInt("Player" + Player + "Level" + levelIndex + "Table" + x + "Score") == 0)
         {
             instructionsImg.gameObject.SetActive(true);
             instructionsCanvas.gameObject.SetActive(true);
@@ -106,6 +106,8 @@ public class clavier2 : MonoBehaviour
     private void Awake()
     {
         Main.controller.openLevel(2);
+        x = PlayerPrefs.GetInt("x:");
+        Main.controller.openTable(10, 2, x);
     }
     private void FixedUpdate()
     {
@@ -237,20 +239,15 @@ public class clavier2 : MonoBehaviour
 
     public void storing()
     {
-        if (score > PlayerPrefs.GetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score"))
-        {
-            if (score > 8)
-            {
-
-                PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "1");
-                PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
-            }
-            else
-            {
-                PlayerPrefs.SetString("Player" + Player + "lev" + levelIndex + "x" + x, "-1");
-                PlayerPrefs.SetInt("Player" + Player + "lev" + levelIndex + "x" + x + "score", score);
-            }
+        if (y != 0)
             Main.controller.addPositive(1);
+        if (PlayerPrefs.GetInt("Player" + Player + "Level" + levelIndex + "Table" + x + "Score") > 8)
+        {
+            PlayerPrefs.SetString("Player" + Player + "Level" + levelIndex + "Table" + x, "1");
+        }
+        else
+        {
+            PlayerPrefs.SetString("Player" + Player + "Level" + levelIndex + "Table" + x, "-1");
         }
     }
 
